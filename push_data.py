@@ -1,3 +1,6 @@
+# ELT Module to push data to MongoDB(Extract Transform Load)
+
+
 import os
 import sys
 import json
@@ -24,6 +27,9 @@ class NetworkDataExtract:
             print(e)
 
     def csv_to_json_convertor(self,file_path):
+        '''This function will convert csv data to json format
+        and return list of json records
+        '''
         try:
             data = pd.read_csv(file_path)
             data.reset_index(drop=True,inplace=True)
@@ -33,6 +39,10 @@ class NetworkDataExtract:
         except Exception as e:
             print(e)
     def insert_data_in_DB(self,records,database,collection):
+        '''This function will insert list of json records to MongoDB
+        and return number of records inserted
+        '''
+
         try:
             self.database = database
             self.collection = collection

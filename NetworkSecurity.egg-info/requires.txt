@@ -1,0 +1,5 @@
+python-dotenv
+pandas
+pymango
+numpy
+pymongo[srv]==3.12
