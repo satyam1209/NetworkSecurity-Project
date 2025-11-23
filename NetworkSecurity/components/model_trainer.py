@@ -24,6 +24,8 @@ from sklearn.ensemble import (
     RandomForestClassifier,
 )
 import mlflow
+# import dagshub
+# dagshub.init(repo_owner='satyam1209', repo_name='NetworkSecurity-Project', mlflow=True)
 
 
 class ModelTrainer:
@@ -112,7 +114,7 @@ class ModelTrainer:
 
          ## Track the experiements with mlflow
         # self.track_mlflow(best_model,classification_train_metric)
-        self.track_mlflow(best_model,classification_test_metric)
+        # self.track_mlflow(best_model,classification_test_metric)
 
         preprocessor = load_object(file_path=self.data_transformation_artifact.transformed_object_file_path)
             
